@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+   postgres:
+      container_name: postgres-connection
+      image: postgres:14.1-alpine
+      restart: always
+      environment:
+         POSTGRES_USER: ${DATABASE_USER}
+         POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+         POSTGRES_DB: ${DATABASE}
+      ports:
+         - '5432:5432'
+      volumes:
+         - data:/var/lib/postgresql/data
+
+   redis:
+      container_name: redis-connection
+      image: redis:latest
+      restart: always
+      ports:
+         - '6379:6379'
+      volumes:
+         - redis_data:/data
+
+   #  ngrok:
+   #     container_name: ngrok
+   #     image: ngrok/ngrok
+   #     restart: always
+   #     environment:
+   #        - NGROK_AUTHTOKEN=${NGROK_AUTH}
+   #     command: http host.docker.internal:8010 --domain=${NGROK_CUSTOM_DOMAIN}
+   #     ports:
+   #        - '4040:4040'
+   #     cpu_shares: 1024
+
+volumes:
+   data:
+   redis_data:

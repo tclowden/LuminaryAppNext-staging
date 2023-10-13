@@ -1,0 +1,8 @@
+.dragging-over {
+   border: 2px solid #25333d;
+   border-radius: 8px;
+   opacity: 0.9;
+}
+.dragging-over.transition {
+   transition: background-color 0.3s ease, border 0.3s ease, border-radius 0.23 ease;
+}

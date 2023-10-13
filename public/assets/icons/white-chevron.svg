@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="7px" height="12px" viewBox="0 0 7 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>icon-cheveron-up</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-cheveron-up" transform="translate(4.000000, 6.500000) rotate(270.000000) translate(-4.000000, -6.500000) translate(-2.000000, 3.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <path d="M2.94545455,5.7 C2.6893413,6.0130273 2.25759026,6.16037132 1.84051716,6.07708287 C1.42344405,5.99379441 1.09767882,5.69517629 1.00681869,5.31285927 C0.915958557,4.93054226 1.07669749,4.53477048 1.41818182,4.3 L5.78181818,0.3 C6.2060111,-0.0811428762 6.88489799,-0.0811428762 7.30909091,0.3 L11.6727273,4.3 C11.9984621,4.6981203 11.9552713,5.25521483 11.5713892,5.60710678 C11.1875071,5.95899874 10.5797676,5.99859023 10.1454545,5.7 L6.54545455,2.42 L2.94545455,5.72 L2.94545455,5.7 Z" id="Path"></path>
+        </g>
+    </g>
+</svg>

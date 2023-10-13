@@ -1,0 +1,36 @@
+/* Stats Styles */
+.container {
+   @apply w-full h-[170px] bg-lum-white flex flex-col items-center p-[30px] justify-start;
+}
+
+:global(.dark) .container {
+   @apply w-full h-[170px] bg-lum-gray-750 flex flex-col items-center p-[30px] justify-start;
+}
+
+.title {
+   @apply text-[14px] text-lum-gray-500;
+}
+
+:global(.dark) .title {
+   @apply text-[14px] text-lum-gray-400;
+}
+
+.stat {
+   @apply text-[26px] text-lum-black;
+}
+
+:global(.dark) .stat {
+   @apply text-[26px] text-lum-white;
+}
+
+.subtitle {
+   @apply text-sm text-lum-gray-400  font-medium;
+}
+
+:global(.dark) .subtitle {
+   @apply text-sm text-lum-gray-300 font-medium;
+}
+
+.iconBoxShadow {
+   box-shadow: 0px 1px 2px 0px rgba(28, 39, 48, 0.2);
+}

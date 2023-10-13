@@ -1,0 +1,143 @@
+/* Header cell styles */
+.fullCalendar :global(.fc-col-header-cell) {
+   background-color: white;
+   color: #5d7281;
+   border-bottom: 3px solid #d4d9dc;
+   border-radius: 2px;
+   font-weight: medium;
+   border-left: none;
+   border-right: none;
+   padding: 3px 0px;
+   font-size: 14px;
+}
+
+.fullCalendar :global(.fc-col-header-cell.fc-day-today) {
+   box-shadow: none;
+}
+
+.fullCalendar :global(.fc-col-header-cell-cushion) {
+   width: 103%;
+   height: 39px;
+   display: grid;
+   align-items: center;
+}
+
+:global(.dark) .fullCalendar :global(.fc-col-header-cell) {
+   background-color: #25333d;
+   border-top: none;
+   border-bottom: 3px solid #10181e;
+   color: #a1adb6;
+}
+
+.fullCalendar :global(.fc-col-header) {
+   --fc-border-color: transparent;
+}
+
+/* Daygrid styles */
+.fullCalendar :global(.fc-daygrid-day) {
+   border: 3px solid #d4d9dc;
+   box-shadow: 0px 1px 2px rgba(16, 24, 30, 0.15);
+   height: 20%;
+   background-color: #f4f5f6 !important;
+}
+
+.fullCalendar :global(.fc-day) {
+   position: relative;
+   overflow: visible; /* This ensures that the absolutely positioned events are visible */
+}
+
+/* .fullCalendar :global(.fc-daygrid-day-frame) {
+   max-height: 100px;
+   overflow-y: auto;
+}
+
+.fullCalendar :global(.fc-daygrid-day-events) {
+   max-height: 100px;
+   overflow-y: auto;
+} */
+
+.fullCalendar :global(.fc-daygrid-day.fc-daygrid-day.fc-day-today) {
+   box-shadow: inset 0 0 0 2px #05d1fa;
+   padding: 2px;
+}
+
+.fullCalendar :global(.fc-daygrid-day-events) {
+   padding: 10px 6px;
+}
+
+.fullCalendar :global(.fc-daygrid-day-number) {
+   width: 100%;
+   display: grid;
+}
+
+.fullCalendar :global(.fc-daygrid-day-top) {
+   display: flex;
+   width: 106%;
+   margin-top: -3%;
+   margin-left: -3%;
+}
+
+/* hide popup after changing view */
+.fullCalendar :global(.fc-popover.fc-more-popover.fc-day.fc-day-mon.fc-day-past) {
+   visibility: hidden;
+}
+
+@media screen and (max-width: 1280px) {
+   .fullCalendar :global(.fc-daygrid-day-top) {
+      display: flex;
+      width: 108%;
+      margin-top: -5%;
+      margin-left: -4%;
+   }
+}
+
+.fullCalendar :global(.fc-daygrid-day-bottom) {
+   display: grid;
+}
+
+.fullCalendar :global(.fc-day-other .fc-daygrid-day-number) {
+   color: transparent;
+}
+
+:global(.dark) .fullCalendar :global(.fc-daygrid-day) {
+   border: 3px solid #10181e;
+   background-color: #10181e !important;
+}
+
+:global(.dark) .fullCalendar :global(.fc-daygrid-day-frame.fc-scrollgrid-sync-inner),
+:global(.dark) .fullCalendar :global(.fc-daygrid-day.fc-daygrid-day.fc-day-today) {
+   background-color: #1e2b34;
+}
+
+/* Event styles */
+.fullCalendar :global(.fc-event) {
+   border: 2px solid white;
+   box-shadow: 0px 1px 2px rgba(16, 24, 30, 0.15);
+   border-radius: 2px;
+   margin: 0;
+}
+
+.fullCalendar :global(.fc-daygrid-event-harness) {
+   margin-top: 2px !important;
+}
+
+.fullCalendar :global(.fc-daygrid-dot-event) {
+   padding: 0px;
+}
+
+.fullCalendar :global(.fc-event.fc-event-start.fc-event-end.fc-bg-event) {
+   --fc-bg-event-opacity: 1;
+}
+
+.fullCalendar :global(.fc-event.fc-event-start.fc-event-end.fc-event-future.fc-bg-event),
+.fullCalendar :global(.fc-event.fc-event-start.fc-event-end.fc-event-today.fc-bg-event) {
+   --fc-bg-event-opacity: 1;
+}
+
+:global(.dark) .fullCalendar :global(.fc-event) {
+   border: none;
+}
+
+.fullCalendar :global(.no-event) {
+   --fc-bg-event-opacity: 1;
+}

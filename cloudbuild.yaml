@@ -1,0 +1,30 @@
+steps:
+   # This is a "cloud builder" which is where our container image gets built https://cloud.google.com/build/docs/cloud-builders
+   - name: 'gcr.io/cloud-builders/docker'
+     # build command that tags our image in gcr, uses the dockerfile in root "."
+     args: ['build', '-t', 'gcr.io/${_GCP_PROJECT_ID}/${_SERVICE_NAME}:$SHORT_SHA', '.']
+     #  push the image we created
+   - name: 'gcr.io/cloud-builders/docker'
+     args: ['push', 'gcr.io/${_GCP_PROJECT_ID}/${_SERVICE_NAME}:$SHORT_SHA']
+     #  deploy command testing
+   - name: 'gcr.io/cloud-builders/gcloud'
+     args:
+        - 'run'
+        - 'deploy'
+        - '${_SERVICE_NAME}'
+        - '--region=${_REGION}'
+        - '--platform=managed'
+        - '--allow-unauthenticated'
+        - '--service-account=${_SERVICE_ACCOUNT_EMAIL}'
+        - '--image=gcr.io/${_GCP_PROJECT_ID}/${_SERVICE_NAME}:$SHORT_SHA'
+        - '--set-env-vars'
+        - 'GCP_PROJECT_ID=${_GCP_PROJECT_ID}'
+        - '--set-env-vars'
+        - 'NEXT_PUBLIC_LUMINARY_DB_API=${_NEXT_PUBLIC_LUMINARY_DB_API}'
+        - '--set-env-vars'
+        - 'NEXT_PUBLIC_LUMINARY_DB_API_SHORT=${_NEXT_PUBLIC_LUMINARY_DB_API_SHORT}'
+        - '--set-env-vars'
+        - 'NEXT_PUBLIC_LUMINARY_URL=${_NEXT_PUBLIC_LUMINARY_URL}'
+
+options:
+   logging: CLOUD_LOGGING_ONLY
